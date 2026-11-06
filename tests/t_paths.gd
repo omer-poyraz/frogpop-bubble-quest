@@ -53,3 +53,21 @@ func test_start_is_offscreen_and_hole_visible(t: Node) -> void:
 		var end: Vector2 = pd.pos_at(pd.length)
 		t.check(PathGenerator.FIELD.has_point(end), "%s hole inside playfield" % type)
 		t.check(end.distance_to(pd.frog_pos) >= K.FROG_CLEAR, "%s hole clear of frog" % type)
+
+func test_generator_rarely_needs_fallback(t: Node) -> void:
+	# for many seeds, some attempt of the requested type must validate (no silent fallback to another route type)
+	var failed: Array = []
+	for type in PathGenerator.TYPES:
+		for sd in 40:
+			var seed_v: int = hash([9100 + sd * 37, sd])
+			var ok: bool = false
+			for attempt in 12:
+				var rng := RandomNumberGenerator.new()
+				rng.seed = hash([type, seed_v, attempt])
+				var pd: PathData = PathGenerator._build(type, rng, attempt)
+				if pd != null and PathGenerator.validate(pd) == "":
+					ok = true
+					break
+			if not ok:
+				failed.append("%s/%d" % [type, sd])
+	t.check(failed.is_empty(), "types fell back to another route: " + str(failed.slice(0, 5)))

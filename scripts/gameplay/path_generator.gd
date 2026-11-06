@@ -137,8 +137,8 @@ static func _snake(type: String, rng: RandomNumberGenerator, _attempt: int) -> P
 	var y_last: float = 1180.0
 	match type:
 		"snake":
-			rows = 4 + rng.randi() % 3
-			y_last = 1180.0 if rows < 6 else 1250.0
+			rows = 4
+			y_last = rng.randf_range(1130.0, 1230.0)
 		"wave":
 			rows = 4 + rng.randi() % 2
 			amp = rng.randf_range(55, 85)
