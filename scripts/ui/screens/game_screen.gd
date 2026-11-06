@@ -562,6 +562,8 @@ func _on_wave_started(wave: int, path: PathData) -> void:
 	progress.value = 0.0
 
 func _show_banner(t1: String, t2: String) -> void:
+	if bool(params.get("no_banner", false)):
+		return
 	banner.text = t1
 	banner_sub.text = t2
 	banner.scale = Vector2(0.6, 0.6)

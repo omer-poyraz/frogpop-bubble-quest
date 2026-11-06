@@ -26,8 +26,11 @@ func build_base(title_key: String, show_coins: bool = true, with_scroll: bool = 
 	var ins: Vector4 = UI.safe_insets(get_viewport())
 	root.add_theme_constant_override("margin_top", int(40 + ins.x))
 	root.add_theme_constant_override("margin_bottom", int(30 + ins.y))
-	root.add_theme_constant_override("margin_left", 40)
-	root.add_theme_constant_override("margin_right", 40)
+	_set_side_margins(root)
+	resized.connect(func() -> void:
+		if is_instance_valid(root):
+			_set_side_margins(root))
+	_set_side_margins.call_deferred(root)
 	add_child(root)
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", 22)
@@ -62,6 +65,13 @@ func build_base(title_key: String, show_coins: bool = true, with_scroll: bool = 
 	else:
 		content = col
 	AudioManager.play_music("music_menu")
+
+## Keep content in a 1080-wide centred column on wide screens (tablets / landscape previews).
+func _set_side_margins(root: MarginContainer) -> void:
+	var vw: float = size.x if size.x > 0.0 else get_viewport_rect().size.x
+	var side: int = int(maxf(40.0, (vw - K.FIELD_W) * 0.5 + 40.0))
+	root.add_theme_constant_override("margin_left", side)
+	root.add_theme_constant_override("margin_right", side)
 
 func clear_content() -> void:
 	for c in content.get_children():

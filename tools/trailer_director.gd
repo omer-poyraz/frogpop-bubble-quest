@@ -86,7 +86,7 @@ func _make_screen(name: String, params: Dictionary) -> Control:
 	return s
 
 func _game(params: Dictionary) -> Control:
-	var p: Dictionary = {"mode": "classic", "auto_play": true, "seed": seed_v, "start_wave": wave, "bot_think": think}
+	var p: Dictionary = {"no_banner": true, "mode": "classic", "auto_play": true, "seed": seed_v, "start_wave": wave, "bot_think": think}
 	p.merge(params, true)
 	var scr: Control = _make_screen("game", p)
 	if preroll > 0.0:
@@ -109,6 +109,9 @@ func caption(text: String, where: String, color: Color = Color.WHITE, size: int 
 		size = int(size * 1.3)
 	var vp0: Vector2 = _vp()
 	var max_w: float = 900.0 if portrait else (vp0.x - 1080.0) * 0.5 - 140.0
+	var wide_bottom: bool = (not portrait) and where == "bottom"
+	if wide_bottom:
+		max_w = vp0.x * 0.8
 	# shrink until the longest word fits on one line (no mid-word breaks)
 	var longest: String = ""
 	for wd in text.split(" "):
@@ -123,7 +126,7 @@ func caption(text: String, where: String, color: Color = Color.WHITE, size: int 
 	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD
 	var vp: Vector2 = _vp()
-	var w: float = 900.0 if portrait else (vp.x - 1080.0) * 0.5 - 140.0
+	var w: float = max_w
 	l.custom_minimum_size = Vector2(w, 0)
 	l.size = Vector2(w, 400)
 	l.pivot_offset = Vector2(w * 0.5, 200)
