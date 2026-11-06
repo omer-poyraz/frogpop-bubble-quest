@@ -571,9 +571,8 @@ func _show_banner(t1: String, t2: String) -> void:
 	tw.tween_property(banner_sub, "modulate:a", 1.0, 0.3)
 	var tw2: Tween = create_tween()
 	tw2.tween_interval(1.5)
-	tw2.set_parallel(true)
 	tw2.tween_property(banner, "modulate:a", 0.0, 0.5)
-	tw2.tween_property(banner_sub, "modulate:a", 0.0, 0.5)
+	tw2.parallel().tween_property(banner_sub, "modulate:a", 0.0, 0.5)
 
 func _on_shot(color: int, from: Vector2, dir: Vector2) -> void:
 	AudioManager.play("shoot", randf_range(0.95, 1.08), -3.0)

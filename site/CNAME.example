@@ -1,0 +1,5 @@
+# Custom domain support (GitHub Pages)
+# When you buy a domain, rename this file to "CNAME" and replace the next line with ONLY your domain, e.g.:
+#   frogpop.example.com
+# Then add the DNS records GitHub documents (CNAME to omer-poyraz.github.io for a subdomain, or A records for an apex domain).
+# All links in site/ are relative, so the site works both at /frogpop-bubble-quest/ and on the custom domain.

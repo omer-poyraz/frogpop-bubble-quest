@@ -38,6 +38,10 @@ static func defaults() -> Dictionary:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	if "--fresh-save" in OS.get_cmdline_user_args():
+		# capture / demo runs: isolated, always-default save (never touches the real one)
+		path_override = "user://cap_"
+		delete_files()
 	load_game()
 
 func _p(base: String) -> String:

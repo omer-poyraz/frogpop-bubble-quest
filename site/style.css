@@ -1,0 +1,30 @@
+@font-face{font-family:"Fredoka";src:url("assets/Fredoka.ttf");font-weight:300 700;font-display:swap}
+:root{--navy:#16224f;--ink:#0b1536;--green:#3fd96a;--gold:#ffd23c;--pink:#ff7ac8;--blue:#4a8dff}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Fredoka",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--ink);color:#eef2ff;line-height:1.55}
+a{color:#8fd0ff}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px;background:rgba(11,21,54,.92);position:sticky;top:0;z-index:5;backdrop-filter:blur(6px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;color:#fff;text-decoration:none}
+.brand img{border-radius:12px}
+nav a,.lang button{margin-left:14px;color:#cfe3ff;text-decoration:none;font-weight:600;background:none;border:0;font:inherit;cursor:pointer}
+nav a:hover,.lang button:hover{color:var(--gold)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;max-width:1100px;margin:0 auto;padding:44px 22px}
+.hero img.logo{width:100%;max-width:520px;filter:drop-shadow(0 12px 22px rgba(0,0,0,.45))}
+.hero h1{font-size:2.6rem;margin:0 0 10px;line-height:1.1}
+.hero p{font-size:1.2rem;color:#cdd8ff}
+.badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.badge{padding:12px 20px;border-radius:16px;background:linear-gradient(#4a8dff,#1f4fb8);border-bottom:5px solid #14337a;font-weight:700;color:#fff;text-decoration:none}
+.badge.soft{background:#27377a;border-bottom-color:#141c46}
+section.block{max-width:1100px;margin:0 auto;padding:30px 22px}
+section.block h2{font-size:1.9rem;margin:0 0 14px;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:#16224f;border:2px solid #2c3f93;border-radius:22px;padding:18px}
+.card h3{margin:0 0 6px;color:#fff}
+.shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.shots img{height:520px;border-radius:22px;border:3px solid #2c3f93;scroll-snap-align:start;flex:0 0 auto}
+footer{padding:28px 22px;text-align:center;color:#9fb0e8;border-top:1px solid #20306e;margin-top:30px}
+.legal main{max-width:820px;margin:0 auto;padding:24px 22px}
+.legal h1{color:var(--gold)} .legal h2{margin-top:1.6em;color:#fff;font-size:1.25rem}.eff{color:#9fb0e8}
+.legal hr{border:0;border-top:2px dashed #2c3f93;margin:40px 0}
+[data-l]{display:none} html[lang=en] [data-l=en],html[lang=tr] [data-l=tr]{display:revert}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero h1{font-size:2rem}.shots img{height:420px}}
