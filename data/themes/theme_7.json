@@ -1,0 +1,46 @@
+{
+ "id": 7,
+ "key": "mushroom",
+ "name_key": "world_7",
+ "decor": "mushroom",
+ "sky": [
+  "#4a1f5e",
+  "#8a3fa0",
+  "#ff9ad0"
+ ],
+ "track": "#5e2a72",
+ "track_edge": "#2a1236",
+ "accent": "#ffb3e6",
+ "particles": {
+  "type": "spores",
+  "count": 26,
+  "color": "#ffd6f5"
+ },
+ "music": "theme_7",
+ "glow": 0.3,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 220,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 227,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 234,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 22
+}

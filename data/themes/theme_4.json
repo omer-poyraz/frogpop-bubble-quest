@@ -1,0 +1,46 @@
+{
+ "id": 4,
+ "key": "volcano",
+ "name_key": "world_4",
+ "decor": "volcano",
+ "sky": [
+  "#3a0f12",
+  "#a8321a",
+  "#ff8a2a"
+ ],
+ "track": "#5a1a14",
+ "track_edge": "#2b0c0c",
+ "accent": "#ffb347",
+ "particles": {
+  "type": "embers",
+  "count": 26,
+  "color": "#ff9a3c"
+ },
+ "music": "theme_4",
+ "glow": 0.32,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 127,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 134,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 141,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 13
+}

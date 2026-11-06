@@ -1,0 +1,46 @@
+{
+ "id": 2,
+ "key": "ocean",
+ "name_key": "world_2",
+ "decor": "ocean",
+ "sky": [
+  "#0a5f9e",
+  "#1a9bd1",
+  "#8be3ec"
+ ],
+ "track": "#0a4a78",
+ "track_edge": "#12344f",
+ "accent": "#7dffea",
+ "particles": {
+  "type": "bubbles",
+  "count": 26,
+  "color": "#c9fbff"
+ },
+ "music": "theme_2",
+ "glow": 0.28,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 65,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 72,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 79,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 7
+}

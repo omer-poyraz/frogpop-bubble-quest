@@ -1,0 +1,16 @@
+build/
+.godot/
+.venv-tools/
+*.keystore
+*.jks
+*.apk
+*.aab
+*.idsig
+*password*
+*.key
+store/video/raw/
+store/video/*.mp4
+store/video/*.avi
+android/build/
+.DS_Store
+*.tmp

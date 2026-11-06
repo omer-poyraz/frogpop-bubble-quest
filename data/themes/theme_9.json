@@ -1,0 +1,46 @@
+{
+ "id": 9,
+ "key": "galaxy",
+ "name_key": "world_9",
+ "decor": "galaxy",
+ "sky": [
+  "#0b0b2e",
+  "#2a1a6e",
+  "#6a3fc0"
+ ],
+ "track": "#1a1450",
+ "track_edge": "#0a0a22",
+ "accent": "#a8c8ff",
+ "particles": {
+  "type": "stars",
+  "count": 26,
+  "color": "#ffffff"
+ },
+ "music": "theme_9",
+ "glow": 0.34,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 282,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 289,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 296,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": true,
+ "unlock_wave": 28
+}

@@ -1,0 +1,45 @@
+[
+ {
+  "id": "classic",
+  "name_key": "skin_classic",
+  "price": 0,
+  "pro_only": false,
+  "unlock": "free"
+ },
+ {
+  "id": "royal",
+  "name_key": "skin_royal",
+  "price": 600,
+  "pro_only": false,
+  "unlock": "coins"
+ },
+ {
+  "id": "wizard",
+  "name_key": "skin_wizard",
+  "price": 900,
+  "pro_only": false,
+  "unlock": "coins"
+ },
+ {
+  "id": "ninja",
+  "name_key": "skin_ninja",
+  "price": 1300,
+  "pro_only": false,
+  "unlock": "coins"
+ },
+ {
+  "id": "pirate",
+  "name_key": "skin_pirate",
+  "price": 0,
+  "pro_only": false,
+  "unlock": "achievement",
+  "achievement": "ach_wave_10"
+ },
+ {
+  "id": "galaxy",
+  "name_key": "skin_galaxy",
+  "price": 0,
+  "pro_only": true,
+  "unlock": "pro"
+ }
+]

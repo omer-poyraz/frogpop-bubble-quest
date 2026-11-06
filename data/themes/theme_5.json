@@ -1,0 +1,46 @@
+{
+ "id": 5,
+ "key": "crystal",
+ "name_key": "world_5",
+ "decor": "crystal",
+ "sky": [
+  "#2a1a5e",
+  "#5b3fb5",
+  "#a98cff"
+ ],
+ "track": "#3a2a7a",
+ "track_edge": "#1c1240",
+ "accent": "#9ffcff",
+ "particles": {
+  "type": "sparkle",
+  "count": 26,
+  "color": "#b8f3ff"
+ },
+ "music": "theme_5",
+ "glow": 0.3,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 158,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 165,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 172,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": true,
+ "unlock_wave": 16
+}

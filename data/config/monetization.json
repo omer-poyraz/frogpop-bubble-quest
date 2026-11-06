@@ -1,0 +1,48 @@
+{
+ "_comment": "Google TEST ad unit ids only. Replace with real ids via this file for release. TEST labelled.",
+ "admob": {
+  "label": "TEST",
+  "android": {
+   "app_id": "ca-app-pub-3940256099942544~3347511713",
+   "interstitial": "ca-app-pub-3940256099942544/1033173712",
+   "rewarded": "ca-app-pub-3940256099942544/5224354917"
+  },
+  "ios": {
+   "app_id": "ca-app-pub-3940256099942544~1458002511",
+   "interstitial": "ca-app-pub-3940256099942544/4411468910",
+   "rewarded": "ca-app-pub-3940256099942544/1712485313"
+  },
+  "tag_for_child_directed_treatment": false,
+  "tag_for_under_age_of_consent": false,
+  "max_ad_content_rating": "T"
+ },
+ "plugins": {
+  "admob_singleton": "PoingGodotAdMob",
+  "billing_singleton": "GodotGooglePlayBilling",
+  "ios_iap_singleton": "InAppStore"
+ },
+ "ad_rules": {
+  "no_interstitial_first_games": 3,
+  "interstitial_every_n_games": 3,
+  "min_seconds_between_interstitials": 150,
+  "max_interstitials_per_session": 6
+ },
+ "products": {
+  "frogpop_pro_monthly": {
+   "type": "subs",
+   "title_key": "pro_monthly"
+  },
+  "frogpop_pro_yearly": {
+   "type": "subs",
+   "title_key": "pro_yearly"
+  },
+  "frogpop_pro_lifetime": {
+   "type": "inapp",
+   "title_key": "pro_lifetime"
+  },
+  "frogpop_remove_ads": {
+   "type": "inapp",
+   "title_key": "remove_ads"
+  }
+ }
+}

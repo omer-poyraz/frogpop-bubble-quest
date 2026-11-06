@@ -1,0 +1,46 @@
+{
+ "id": 1,
+ "key": "candy",
+ "name_key": "world_1",
+ "decor": "candy",
+ "sky": [
+  "#ff9ec9",
+  "#ffc7e3",
+  "#fff0b8"
+ ],
+ "track": "#d65aa0",
+ "track_edge": "#7a3a66",
+ "accent": "#ffffff",
+ "particles": {
+  "type": "sparkle",
+  "count": 26,
+  "color": "#ffffff"
+ },
+ "music": "theme_1",
+ "glow": 0.34,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 34,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 41,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 48,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 4
+}

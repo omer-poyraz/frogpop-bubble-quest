@@ -1,0 +1,46 @@
+{
+ "id": 3,
+ "key": "ice",
+ "name_key": "world_3",
+ "decor": "ice",
+ "sky": [
+  "#1e4f86",
+  "#6fb2e8",
+  "#e6f6ff"
+ ],
+ "track": "#2a6aa8",
+ "track_edge": "#183a5e",
+ "accent": "#ffffff",
+ "particles": {
+  "type": "snow",
+  "count": 26,
+  "color": "#ffffff"
+ },
+ "music": "theme_3",
+ "glow": 0.26,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 96,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 103,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 110,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 10
+}

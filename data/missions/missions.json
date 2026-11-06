@@ -1,0 +1,58 @@
+[
+ {
+  "id": "m_pop",
+  "stat": "balls",
+  "base": 60,
+  "scale": 20,
+  "coins": 30,
+  "key": "mission_pop"
+ },
+ {
+  "id": "m_wave",
+  "stat": "wave",
+  "base": 4,
+  "scale": 2,
+  "coins": 40,
+  "key": "mission_wave"
+ },
+ {
+  "id": "m_score",
+  "stat": "score",
+  "base": 3000,
+  "scale": 1500,
+  "coins": 40,
+  "key": "mission_score"
+ },
+ {
+  "id": "m_combo",
+  "stat": "combo",
+  "base": 4,
+  "scale": 1,
+  "coins": 35,
+  "key": "mission_combo"
+ },
+ {
+  "id": "m_games",
+  "stat": "games",
+  "base": 2,
+  "scale": 1,
+  "coins": 25,
+  "key": "mission_games"
+ },
+ {
+  "id": "m_power",
+  "stat": "powers",
+  "base": 2,
+  "scale": 1,
+  "coins": 30,
+  "key": "mission_power"
+ },
+ {
+  "id": "m_chain",
+  "stat": "chain",
+  "base": 2,
+  "scale": 1,
+  "coins": 45,
+  "key": "mission_chain"
+ }
+]

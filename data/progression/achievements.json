@@ -1,0 +1,122 @@
+[
+ {
+  "id": "ach_first_pop",
+  "stat": "balls_popped",
+  "target": 1,
+  "coins": 20
+ },
+ {
+  "id": "ach_pop_100",
+  "stat": "balls_popped",
+  "target": 100,
+  "coins": 40
+ },
+ {
+  "id": "ach_pop_1000",
+  "stat": "balls_popped",
+  "target": 1000,
+  "coins": 120
+ },
+ {
+  "id": "ach_pop_10000",
+  "stat": "balls_popped",
+  "target": 10000,
+  "coins": 400
+ },
+ {
+  "id": "ach_wave_5",
+  "stat": "best_wave",
+  "target": 5,
+  "coins": 50
+ },
+ {
+  "id": "ach_wave_10",
+  "stat": "best_wave",
+  "target": 10,
+  "coins": 150
+ },
+ {
+  "id": "ach_wave_25",
+  "stat": "best_wave",
+  "target": 25,
+  "coins": 300
+ },
+ {
+  "id": "ach_wave_50",
+  "stat": "best_wave",
+  "target": 50,
+  "coins": 700
+ },
+ {
+  "id": "ach_score_5k",
+  "stat": "high_score",
+  "target": 5000,
+  "coins": 50
+ },
+ {
+  "id": "ach_score_25k",
+  "stat": "high_score",
+  "target": 25000,
+  "coins": 150
+ },
+ {
+  "id": "ach_score_100k",
+  "stat": "high_score",
+  "target": 100000,
+  "coins": 500
+ },
+ {
+  "id": "ach_combo_5",
+  "stat": "best_combo",
+  "target": 5,
+  "coins": 40
+ },
+ {
+  "id": "ach_combo_15",
+  "stat": "best_combo",
+  "target": 15,
+  "coins": 150
+ },
+ {
+  "id": "ach_chain_3",
+  "stat": "best_chain",
+  "target": 3,
+  "coins": 60
+ },
+ {
+  "id": "ach_chain_5",
+  "stat": "best_chain",
+  "target": 5,
+  "coins": 200
+ },
+ {
+  "id": "ach_games_10",
+  "stat": "games_played",
+  "target": 10,
+  "coins": 50
+ },
+ {
+  "id": "ach_games_100",
+  "stat": "games_played",
+  "target": 100,
+  "coins": 300
+ },
+ {
+  "id": "ach_powers_10",
+  "stat": "powers_used",
+  "target": 10,
+  "coins": 60
+ },
+ {
+  "id": "ach_playtime_1h",
+  "stat": "play_time",
+  "target": 3600,
+  "coins": 150
+ },
+ {
+  "id": "ach_daily_7",
+  "stat": "daily_claims",
+  "target": 7,
+  "coins": 120
+ }
+]

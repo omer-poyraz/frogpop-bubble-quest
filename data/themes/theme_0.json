@@ -1,0 +1,46 @@
+{
+ "id": 0,
+ "key": "forest",
+ "name_key": "world_0",
+ "decor": "forest",
+ "sky": [
+  "#1d5a3c",
+  "#2f8f55",
+  "#9be08a"
+ ],
+ "track": "#14422d",
+ "track_edge": "#5a3a22",
+ "accent": "#ffe27a",
+ "particles": {
+  "type": "leaves",
+  "count": 26,
+  "color": "#b6ff7a"
+ },
+ "music": "theme_0",
+ "glow": 0.3,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 3,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 10,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 17,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 1
+}

@@ -1,0 +1,46 @@
+{
+ "id": 6,
+ "key": "temple",
+ "name_key": "world_6",
+ "decor": "temple",
+ "sky": [
+  "#4a3a1e",
+  "#8a7035",
+  "#e6cf8a"
+ ],
+ "track": "#5a4624",
+ "track_edge": "#2a2010",
+ "accent": "#ffd86b",
+ "particles": {
+  "type": "dust",
+  "count": 26,
+  "color": "#ffe8a8"
+ },
+ "music": "theme_6",
+ "glow": 0.3,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 189,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 196,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 203,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 19
+}

@@ -1,0 +1,46 @@
+{
+ "id": 8,
+ "key": "desert",
+ "name_key": "world_8",
+ "decor": "desert",
+ "sky": [
+  "#d96a2a",
+  "#f2a14a",
+  "#ffe2a0"
+ ],
+ "track": "#a8481c",
+ "track_edge": "#5a2a14",
+ "accent": "#fff2c0",
+ "particles": {
+  "type": "dust",
+  "count": 26,
+  "color": "#ffe0a0"
+ },
+ "music": "theme_8",
+ "glow": 0.28,
+ "variants": [
+  {
+   "name": "v0",
+   "hue_shift": 0.0,
+   "seed": 251,
+   "layout": 0,
+   "light": 0.0
+  },
+  {
+   "name": "v1",
+   "hue_shift": 0.045,
+   "seed": 258,
+   "layout": 1,
+   "light": 0.08
+  },
+  {
+   "name": "v2",
+   "hue_shift": -0.05,
+   "seed": 265,
+   "layout": 2,
+   "light": -0.06
+  }
+ ],
+ "pro_only": false,
+ "unlock_wave": 25
+}
