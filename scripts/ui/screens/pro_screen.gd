@@ -34,7 +34,7 @@ func _ready() -> void:
 	content.add_child(c)
 	var avail: bool = PurchaseManager.is_available()
 	if not avail:
-		var na: LocLabel = UI.label("store_unavailable", 34, Color("ff9a9a"))
+		var na: LocLabel = UI.wrap_label("store_unavailable", 34, Color("ff9a9a"), 900)
 		content.add_child(na)
 	for pid in [["frogpop_pro_yearly", "pro_yearly", "yellow"], ["frogpop_pro_monthly", "pro_monthly", "blue"], ["frogpop_pro_lifetime", "pro_lifetime", "purple"], ["frogpop_remove_ads", "remove_ads", "gray"]]:
 		var b: FButton = FButton.create(pid[1], pid[2], Vector2(900, 120), "crown" if pid[0] != "frogpop_remove_ads" else "ad", 44)
@@ -49,7 +49,7 @@ func _ready() -> void:
 	rb.disabled = not avail
 	rb.pressed.connect(func() -> void: PurchaseManager.restore())
 	content.add_child(rb)
-	content.add_child(UI.label("pro_note", 26, Color("8f9bd6")))
+	content.add_child(UI.wrap_label("pro_note", 26, Color("8f9bd6"), 900))
 	PurchaseManager.purchase_result.connect(_on_result)
 
 func _on_result(_product: String, success: bool, msg_key: String) -> void:

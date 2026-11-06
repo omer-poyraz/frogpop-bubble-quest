@@ -92,6 +92,7 @@ func test_game_screen_every_mode_autoplays(t: Node) -> void:
 	AdsManager.in_gameplay = false
 
 func test_game_screen_input_and_overlays(t: Node) -> void:
+	SaveManager.data["powers"]["slow"] = 3
 	var holder := Control.new()
 	holder.size = Vector2(1080, 1920)
 	t.add_child(holder)

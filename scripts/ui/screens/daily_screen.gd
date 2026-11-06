@@ -14,7 +14,7 @@ func _rebuild() -> void:
 	content.add_child(UI.label("daily_streak", 48, Color("ffd23c"), HORIZONTAL_ALIGNMENT_CENTER, [info["streak"]]))
 	grid = GridContainer.new()
 	grid.columns = 4
-	grid.add_theme_constant_override("h_separation", 16)
+	grid.add_theme_constant_override("h_separation", 12)
 	grid.add_theme_constant_override("v_separation", 16)
 	var cc := CenterContainer.new()
 	cc.add_child(grid)
@@ -23,7 +23,7 @@ func _rebuild() -> void:
 	var claimed_today: bool = info["claimed_today"]
 	for i in 7:
 		var p: PanelContainer = UI.panel(Color(0.1, 0.16, 0.38, 0.95), Color("4a62d6"), 30)
-		p.custom_minimum_size = Vector2(230, 250)
+		p.custom_minimum_size = Vector2(205, 250)
 		var rw: Dictionary = ProgressionManager.DAILY_TABLE[i]
 		var v := VBoxContainer.new()
 		v.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -50,9 +50,9 @@ func _rebuild() -> void:
 	claim_btn.pressed.connect(_claim)
 	content.add_child(claim_btn)
 	if info["rolled_back"]:
-		content.add_child(UI.label("daily_clock", 34, Color("ff9a9a")))
+		content.add_child(UI.wrap_label("daily_clock", 34, Color("ff9a9a"), 900))
 	elif claimed_today:
-		content.add_child(UI.label("daily_come_back", 36, Color("a9b8ff")))
+		content.add_child(UI.wrap_label("daily_come_back", 36, Color("a9b8ff"), 900))
 	if ProgressionManager.is_pro():
 		content.add_child(UI.label("daily_pro_bonus", 32, Color("ff7ac8")))
 

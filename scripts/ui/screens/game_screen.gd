@@ -48,6 +48,7 @@ var _best_at_start: int = 0
 var _results: Dictionary = {}
 var _first_shot_done: bool = false
 var _wave_seen: int = 0
+var _demo: Array = []
 
 func _ready() -> void:
 	mode = str(params.get("mode", GameManager.mode))
@@ -81,7 +82,16 @@ func _ready() -> void:
 	var start_wave: int = int(params.get("start_wave", 1))
 	if auto_play:
 		bot = Bot.new()
-		bot.skill = 0.97
+		bot.skill = float(params.get("bot_skill", 0.97))
+		bot.think_interval = float(params.get("bot_think", 0.22))
+		bot.use_powers = not params.has("demo")
+		for d in str(params.get("demo", "")).split(",", false):
+			var kv: PackedStringArray = d.split(":")
+			if kv.size() == 2:
+				_demo.append({"t": float(kv[0]), "p": kv[1], "done": false})
+		if not _demo.is_empty():
+			for p in K.POWERS:
+				inv[p] = maxi(int(inv[p]), 3)
 	core.start(mode, int(params.get("seed", GameManager.game_seed(mode))), inv, start_wave)
 	_update_power_buttons()
 	if not SaveManager.data["tutorial_done"] and not auto_play:
@@ -212,6 +222,8 @@ func _build_hud() -> void:
 	banner_sub.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hud.add_child(banner_sub)
 	hint = UI.label("hint_aim", 44, Color.WHITE)
+	hint.custom_minimum_size = Vector2(900, 0)
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	hint.visible = false
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	hud.add_child(hint)
@@ -273,7 +285,14 @@ func _process(delta: float) -> void:
 		if bot != null:
 			bot.tick(core, delta)
 			view.aim_visible = false
-		core.power.tick(0.0)
+			for d in _demo:
+				if not d["done"] and core.time >= float(d["t"]):
+					d["done"] = true
+					var pw: String = str(d["p"])
+					if pw == "rainbow":
+						core.use_power("rainbow", core.best_color())
+					else:
+						core.use_power(pw)
 		_update_hud(delta)
 	elif _over:
 		core.update(0.0)
@@ -562,7 +581,6 @@ func _on_shot(color: int, from: Vector2, dir: Vector2) -> void:
 	var col: Color = K.color_of(color) if color < 8 else Color.WHITE
 	view.fx_add.muzzle_flash(from, col)
 	view.frog.on_shoot()
-	view.frog.on_tongue() if randf() < 0.0 else null
 	if not _first_shot_done:
 		_first_shot_done = true
 		if hint.visible:
@@ -573,7 +591,7 @@ func _on_shot(color: int, from: Vector2, dir: Vector2) -> void:
 func _on_inserted(b: Ball, contact: Vector2) -> void:
 	view.ball_inserted(b, contact)
 	AudioManager.play("collide", randf_range(0.9, 1.15), -4.0)
-	view.fx_add.shockwave(core.path.pos_at(b.s), Color(1, 1, 1, 0.5), 40.0, 380.0)
+	view.fx_add.shockwave(core.path.pos_at(b.s), Color(1, 1, 1, 0.28), 30.0, 240.0)
 
 func _on_miss() -> void:
 	pass
@@ -766,7 +784,7 @@ func _show_game_over(info: Dictionary) -> void:
 		cont.pressed.connect(func() -> void: _on_continue_pressed(cont))
 		v.add_child(cont)
 	elif info.get("can_continue", false):
-		var na: Label = UI.label("ads_unavailable", 30, Color("8f9bd6"))
+		var na: Label = UI.wrap_label("ads_unavailable", 30, Color("8f9bd6"), 700)
 		v.add_child(na)
 	var again: FButton = FButton.create("go_replay", "green", Vector2(640, 128), "replay")
 	again.pressed.connect(func() -> void: _leave_after_over("game"))

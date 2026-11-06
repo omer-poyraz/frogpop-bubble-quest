@@ -132,7 +132,7 @@ func _confirm_reset() -> void:
 	v.add_theme_constant_override("separation", 24)
 	v.alignment = BoxContainer.ALIGNMENT_CENTER
 	p.add_child(v)
-	v.add_child(UI.label("reset_confirm", 42, Color.WHITE))
+	v.add_child(UI.wrap_label("reset_confirm", 42, Color.WHITE, 680))
 	var yes: FButton = FButton.create("yes_delete", "red", Vector2(560, 110), "", 40)
 	yes.pressed.connect(func() -> void:
 		SaveManager.reset_all()

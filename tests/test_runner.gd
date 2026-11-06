@@ -4,7 +4,7 @@ extends Node
 
 const SUITES: Array[String] = [
 	"res://tests/t_paths.gd", "res://tests/t_chain.gd", "res://tests/t_game.gd",
-	"res://tests/t_progress.gd", "res://tests/t_ui.gd", "res://tests/t_sim.gd"]
+	"res://tests/t_progress.gd", "res://tests/t_ui.gd", "res://tests/t_perf.gd", "res://tests/t_sim.gd"]
 
 var passed: int = 0
 var failed: int = 0

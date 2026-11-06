@@ -32,6 +32,9 @@ func _ready() -> void:
 	toast_label.modulate.a = 0.0
 	overlay.add_child(toast_label)
 	get_tree().root.size_changed.connect(_on_resize)
+	var all_args: PackedStringArray = OS.get_cmdline_args()
+	if OS.has_feature("pc") and DisplayServer.get_name() != "headless" and not ("--write-movie" in all_args) and not ("--resolution" in all_args):
+		get_window().size = Vector2i(540, 960)   # comfortable desktop preview window
 	var args: PackedStringArray = OS.get_cmdline_user_args()
 	var screen: String = ""
 	var prm: Dictionary = {}
@@ -44,6 +47,14 @@ func _ready() -> void:
 			prm["start_wave"] = int(a.substr(7))
 		elif a.begins_with("--seed="):
 			prm["seed"] = int(a.substr(7))
+		elif a.begins_with("--bot-think="):
+			prm["bot_think"] = float(a.substr(12))
+		elif a.begins_with("--bot-skill="):
+			prm["bot_skill"] = float(a.substr(12))
+		elif a.begins_with("--demo="):
+			prm["demo"] = a.substr(7)
+		elif a.begins_with("--tab="):
+			prm["tab"] = a.substr(6)
 		elif a == "--autoplay":
 			prm["auto_play"] = true
 		elif a.begins_with("--lang="):
@@ -91,5 +102,7 @@ func show_toast(text: String) -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
-		if GameManager.current_screen != "menu" and GameManager.current_screen != "game":
+		if GameManager.current_screen == "menu":
+			get_tree().quit()
+		elif GameManager.current_screen != "game":
 			GameManager.go("menu")

@@ -47,6 +47,12 @@ static func label(key: String, size: int = 40, color: Color = WHITE, align: int 
 	style_text(l, size, color, maxi(int(size / 7.0), 2))
 	return l
 
+static func wrap_label(key: String, size: int, color: Color, width: float, args: Array = []) -> LocLabel:
+	var l: LocLabel = label(key, size, color, HORIZONTAL_ALIGNMENT_CENTER, args)
+	l.custom_minimum_size = Vector2(width, 0)
+	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	return l
+
 static func raw_label(text: String, size: int = 40, color: Color = WHITE, align: int = HORIZONTAL_ALIGNMENT_CENTER) -> Label:
 	var l := Label.new()
 	l.text = text

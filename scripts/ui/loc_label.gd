@@ -8,9 +8,10 @@ var args: Array = []
 func _init(k: String = "", a: Array = []) -> void:
 	key = k
 	args = a
-	autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 
 func _ready() -> void:
+	if custom_minimum_size.x > 0.0:
+		autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	LocalizationManager.language_changed.connect(_refresh)
 	_refresh()
 

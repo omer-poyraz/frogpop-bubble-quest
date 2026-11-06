@@ -18,6 +18,7 @@ func _ready() -> void:
 			tab = t
 			_rebuild())
 		tabs_row.add_child(b)
+	tab = str(params.get("tab", "skins"))
 	_rebuild()
 
 func _rebuild() -> void:
