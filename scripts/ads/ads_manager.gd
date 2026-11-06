@@ -97,13 +97,13 @@ func _show_test_overlay(rewarded: bool) -> void:
 	layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	var bg := ColorRect.new()
 	bg.color = Color(0.05, 0.05, 0.1, 0.96)
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	layer.add_child(bg)
 	var lbl := Label.new()
 	lbl.text = LocalizationManager.t("test_ad_label") + "\n\n" + LocalizationManager.t("test_ad_body")
 	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
+	lbl.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	lbl.add_theme_font_size_override("font_size", 56)
 	lbl.add_theme_color_override("font_color", Color("ffd23c"))
 	bg.add_child(lbl)

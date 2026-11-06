@@ -61,7 +61,34 @@ func _notification(what: int) -> void:
 static func checksum(d: Dictionary) -> int:
 	var copy: Dictionary = d.duplicate(true)
 	copy.erase("sum")
-	return hash(JSON.stringify(copy, "", true))
+	return hash(_canon(copy))
+
+## Canonical text form: sorted keys, whole floats printed as ints (JSON round trip turns ints into floats).
+static func _canon(v: Variant) -> String:
+	match typeof(v):
+		TYPE_DICTIONARY:
+			var keys: Array = (v as Dictionary).keys()
+			keys.sort()
+			var parts: PackedStringArray = PackedStringArray()
+			for k in keys:
+				parts.append(str(k) + ":" + _canon(v[k]))
+			return "{" + ",".join(parts) + "}"
+		TYPE_ARRAY:
+			var parts2: PackedStringArray = PackedStringArray()
+			for e in v:
+				parts2.append(_canon(e))
+			return "[" + ",".join(parts2) + "]"
+		TYPE_FLOAT:
+			var f: float = v
+			if is_equal_approx(f, round(f)) and absf(f) < 1.0e15:
+				return str(int(round(f)))
+			return "%.6f" % f
+		TYPE_INT:
+			return str(v)
+		TYPE_BOOL:
+			return "true" if v else "false"
+		_:
+			return "\"" + str(v) + "\""
 
 func _read(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -159,6 +186,10 @@ func save() -> bool:
 		f2.close()
 	saved.emit()
 	return true
+
+func delete_files_backup_only() -> void:
+	if FileAccess.file_exists(_p(BACKUP_PATH)):
+		DirAccess.remove_absolute(_p(BACKUP_PATH))
 
 func reset_all() -> void:
 	data = defaults()
