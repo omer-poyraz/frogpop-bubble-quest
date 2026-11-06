@@ -15,3 +15,5 @@ android/build/
 .DS_Store
 *.tmp
 override.cfg
+CLAUDE.md
+docs/SPEC.md
